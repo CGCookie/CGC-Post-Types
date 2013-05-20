@@ -337,3 +337,17 @@ function cgc_set_default_difficulty( $post_id, $post ) {
     }
 }
 add_action( 'save_post', 'cgc_set_default_difficulty', 100, 2 );
+
+function cgc_lessons_to_courses() {
+
+	if( ! function_exists( 'p2p_register_connection_type' ) )
+		return;
+
+	p2p_register_connection_type( array(
+		'name' => 'lessons_to_courses',
+		'from' => 'cgc_lessons',
+		'to' => 'cgc_courses',
+		'sortable' => 'any'
+	) );
+}
+add_action( 'p2p_init', 'cgc_lessons_to_courses' );
