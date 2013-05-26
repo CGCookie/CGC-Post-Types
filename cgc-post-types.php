@@ -228,10 +228,10 @@ function cgc_register_post_types() {
 		$courses_args = array(
 			'labels' 			=> $courses_labels,
 			'singular_label' 	=> __('Course'),
-			'public' 			=> true,
+			'public' 			=> false,
 			'show_ui' 			=> true,
-			'publicly_queryable'=> true,
-			'query_var'			=> true,
+			'publicly_queryable'=> false,
+			'query_var'			=> false,
 			'capability_type' 	=> 'post',
 			'has_archive' 		=> true,
 			'hierarchical' 		=> false,
@@ -264,6 +264,28 @@ function cgc_register_post_types() {
 			'rewrite' => array( 'slug' => 'difficulty' )
 		));
 
+		$type_labels = array(
+			'name' => _x( 'Software Version', 'taxonomy general name', 'edd' ),
+			'singular_name' => _x( 'Difficultity', 'taxonomy singular name', 'edd' ),
+			'search_items' =>  __( 'Search Type' ),
+			'all_items' => __( 'All Versions' ),
+			'parent_item' => __( 'Parent Version' ),
+			'parent_item_colon' => __( 'Parent Version:' ),
+			'edit_item' => __( 'Edit Version' ),
+			'update_item' => __( 'Update Version' ),
+			'add_new_item' => __( 'Add New Version' ),
+			'new_item_name' => __( 'New Version Name' ),
+			'menu_name' => __( 'Software Version' ),
+		);
+
+		register_taxonomy('software_version', array('post','cgc_courses', 'cgc_lessons'), array(
+			'hierarchical' => true,
+			'labels' => $type_labels,
+			'show_ui' => true,
+			'query_var' => 'type',
+			'rewrite' => array( 'slug' => 'software-version' )
+		));		
+
 		$lessons_labels = array(
 			'name' 				=> _x( 'Lessons', 'post type general name' ),
 			'singular_name'		=> _x( 'Lesson', 'post type singular name' ),
@@ -281,10 +303,10 @@ function cgc_register_post_types() {
 		$lessons_args = array(
 			'labels' 			=> $lessons_labels,
 			'singular_label' 	=> __('Lesson'),
-			'public' 			=> true,
+			'public' 			=> false,
 			'show_ui' 			=> true,
-			'publicly_queryable'=> true,
-			'query_var'			=> true,
+			'publicly_queryable'=> false,
+			'query_var'			=> false,
 			'capability_type' 	=> 'post',
 			'has_archive' 		=> true,
 			'hierarchical' 		=> false,
