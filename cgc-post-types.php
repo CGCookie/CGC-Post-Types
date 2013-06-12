@@ -228,10 +228,10 @@ function cgc_register_post_types() {
 		$courses_args = array(
 			'labels' 			=> $courses_labels,
 			'singular_label' 	=> __('Course'),
-			'public' 			=> false,
+			'public' 			=> true,
 			'show_ui' 			=> true,
-			'publicly_queryable'=> false,
-			'query_var'			=> false,
+			'publicly_queryable'=> true,
+			'query_var'			=> true,
 			'capability_type' 	=> 'post',
 			'has_archive' 		=> true,
 			'hierarchical' 		=> false,
@@ -261,6 +261,7 @@ function cgc_register_post_types() {
 			'labels' => $type_labels,
 			'show_ui' => true,
 			'query_var' => 'type',
+			'has_archive' => true,
 			'rewrite' => array( 'slug' => 'difficulty' )
 		));
 
@@ -303,10 +304,10 @@ function cgc_register_post_types() {
 		$lessons_args = array(
 			'labels' 			=> $lessons_labels,
 			'singular_label' 	=> __('Lesson'),
-			'public' 			=> false,
+			'public' 			=> true,
 			'show_ui' 			=> true,
-			'publicly_queryable'=> false,
-			'query_var'			=> false,
+			'publicly_queryable'=> true,
+			'query_var'			=> true,
 			'capability_type' 	=> 'post',
 			'has_archive' 		=> true,
 			'hierarchical' 		=> false,
