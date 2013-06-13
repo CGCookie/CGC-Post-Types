@@ -339,6 +339,65 @@ function cgc_register_post_types() {
 			'query_var' => 'type',
 			'rewrite' => array( 'slug' => 'lessons-type' )
 		));
+
+		$resource_labels = array(
+			'name' 				=> _x( 'Resources', 'post type general name' ),
+			'singular_name'		=> _x( 'Resource', 'post type singular name' ),
+			'add_new' 			=> _x( 'Add New', 'Resources'),
+			'add_new_item' 		=> __( 'Add New Resource'),
+			'edit_item' 		=> __( 'Edit Resource'),
+			'new_item' 			=> __( 'New Resource'),
+			'view_item' 		=> __( 'View Resource'),
+			'search_items' 		=> __( 'Search Resources '),
+			'not_found' 		=>  __( 'No Resources found' ),
+			'not_found_in_trash'=> __( 'No Resources found in Trash' ),
+			'parent_item_colon' => ''
+		);
+
+		$resources_args = array(
+			'labels' 			=> $resource_labels,
+			'singular_label' 	=> __('Resource'),
+			'public' 			=> true,
+			'show_ui' 			=> true,
+			'publicly_queryable'=> true,
+			'query_var'			=> true,
+			'capability_type' 	=> 'post',
+			'has_archive' 		=> true,
+			'hierarchical' 		=> false,
+			'rewrite' 			=> array('slug' => 'resource'),
+			'supports' 			=> array('title','editor','revisions', 'thumbnail', 'author')
+		);
+		register_post_type('cgc_resource', $resources_args);
+
+		$resource_folder_labels = array(
+			'name' 				=> _x( 'Resource Folders', 'post type general name' ),
+			'singular_name'		=> _x( 'Resource Folder', 'post type singular name' ),
+			'add_new' 			=> _x( 'Add New', 'Resource Folders'),
+			'add_new_item' 		=> __( 'Add New Resource'),
+			'edit_item' 		=> __( 'Edit Resource'),
+			'new_item' 			=> __( 'New Resource'),
+			'view_item' 		=> __( 'View Resource'),
+			'search_items' 		=> __( 'Search Resources '),
+			'not_found' 		=>  __( 'No Resources found' ),
+			'not_found_in_trash'=> __( 'No Resources found in Trash' ),
+			'parent_item_colon' => ''
+		);
+
+		$resource_folders_args = array(
+			'labels' 			=> $resource_folder_labels,
+			'singular_label' 	=> __('Resource Folder'),
+			'public' 			=> true,
+			'show_ui' 			=> true,
+			'publicly_queryable'=> true,
+			'query_var'			=> true,
+			'capability_type' 	=> 'post',
+			'has_archive' 		=> true,
+			'hierarchical' 		=> false,
+			'rewrite' 			=> array('slug' => 'resource-folder'),
+			'supports' 			=> array('title','editor','revisions', 'thumbnail', 'author')
+		);
+		register_post_type('cgc_resource_folder', $resource_folders_args);
+
 	}
 
 }
@@ -370,6 +429,13 @@ function cgc_lessons_to_courses() {
 		'name' => 'lessons_to_courses',
 		'from' => 'cgc_lessons',
 		'to' => 'cgc_courses',
+		'sortable' => 'any'
+	) );
+
+	p2p_register_connection_type( array(
+		'name' => 'resources_to_folders',
+		'from' => 'cgc_resource',
+		'to' => 'cgc_resource_folder',
 		'sortable' => 'any'
 	) );
 }
