@@ -260,7 +260,7 @@ function cgc_register_post_types() {
 			'hierarchical' => true,
 			'labels' => $type_labels,
 			'show_ui' => true,
-			'query_var' => 'type',
+			'query_var' => 'difficulty',
 			'has_archive' => true,
 			'rewrite' => array( 'slug' => 'difficulty' )
 		));
@@ -285,7 +285,7 @@ function cgc_register_post_types() {
 			'show_ui' => true,
 			'query_var' => 'type',
 			'rewrite' => array( 'slug' => 'software-version' )
-		));		
+		));
 
 		$lessons_labels = array(
 			'name' 				=> _x( 'Lessons', 'post type general name' ),
