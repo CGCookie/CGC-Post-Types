@@ -431,5 +431,12 @@ function cgc_lessons_to_courses() {
 		'to' => 'cgc_courses',
 		'sortable' => 'any'
 	) );
+
+	p2p_register_connection_type( array(
+		'name' => 'resources_to_folders',
+		'from' => 'cgc_resource',
+		'to' => 'cgc_resource_folder',
+		'sortable' => 'any'
+	) );
 }
 add_action( 'p2p_init', 'cgc_lessons_to_courses' );
