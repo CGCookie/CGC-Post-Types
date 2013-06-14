@@ -365,7 +365,7 @@ function cgc_register_post_types() {
 			'has_archive' 		=> true,
 			'hierarchical' 		=> false,
 			'rewrite' 			=> array('slug' => 'resource'),
-			'supports' 			=> array('title','editor','revisions', 'thumbnail', 'author')
+			'supports' 			=> array('title','editor','revisions', 'thumbnail', 'comments', 'author')
 		);
 		register_post_type('cgc_resource', $resources_args);
 
