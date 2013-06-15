@@ -231,7 +231,7 @@ function cgc_register_post_types() {
 	$courses_args = array(
 		'labels' 			=> $courses_labels,
 		'singular_label' 	=> __('Course'),
-		'public' 			=> true,
+		'public' 			=> false,
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
@@ -258,6 +258,7 @@ function cgc_register_post_types() {
 		'new_item_name' => __( 'New Difficulty Name' ),
 		'menu_name' => __( 'Difficulty' ),
 	);
+
 
 	register_taxonomy('difficulty', array('post','cgc_courses', 'cgc_lessons'), array(
 		'hierarchical' => true,
@@ -304,10 +305,11 @@ function cgc_register_post_types() {
 		'parent_item_colon' => ''
 	);
 
+
 	$lessons_args = array(
 		'labels' 			=> $lessons_labels,
 		'singular_label' 	=> __('Lesson'),
-		'public' 			=> true,
+		'public' 			=> false,
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
@@ -401,6 +403,7 @@ function cgc_register_post_types() {
 	);
 	register_post_type('cgc_resource_folder', $resource_folders_args);
 
+
 }
 add_action('init', 'cgc_register_post_types');
 
@@ -440,4 +443,5 @@ function cgc_lessons_to_courses() {
 		'sortable' => 'any'
 	) );
 }
+
 add_action( 'p2p_init', 'cgc_lessons_to_courses' );
