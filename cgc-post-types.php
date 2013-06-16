@@ -207,7 +207,7 @@ function cgc_register_post_types() {
 			'hierarchical' => true,
 			'labels' => $type_labels,
 			'show_ui' => true,
-			'query_var' => 'type',
+			'query_var' => 'series-type',
 			'rewrite' => array( 'slug' => 'series-type' )
 		));
 
@@ -264,7 +264,7 @@ function cgc_register_post_types() {
 		'hierarchical' => true,
 		'labels' => $type_labels,
 		'show_ui' => true,
-		'query_var' => 'type',
+		'query_var' => 'difficulty',
 		'has_archive' => true,
 		'rewrite' => array( 'slug' => 'difficulty' )
 	));
@@ -287,7 +287,7 @@ function cgc_register_post_types() {
 		'hierarchical' => true,
 		'labels' => $type_labels,
 		'show_ui' => true,
-		'query_var' => 'type',
+		'query_var' => 'software-version',
 		'rewrite' => array( 'slug' => 'software-version' )
 	));
 
@@ -341,7 +341,7 @@ function cgc_register_post_types() {
 		'hierarchical' => true,
 		'labels' => $type_labels,
 		'show_ui' => true,
-		'query_var' => 'type',
+		'query_var' => 'lessons-type',
 		'rewrite' => array( 'slug' => 'lessons-type' )
 	));
 
