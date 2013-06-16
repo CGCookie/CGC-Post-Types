@@ -362,7 +362,7 @@ function cgc_register_post_types() {
 	$resources_args = array(
 		'labels' 			=> $resource_labels,
 		'singular_label' 	=> __('Resource'),
-		'public' 			=> false,
+		'public' 			=> true,
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
@@ -391,7 +391,7 @@ function cgc_register_post_types() {
 	$resource_folders_args = array(
 		'labels' 			=> $resource_folder_labels,
 		'singular_label' 	=> __('Resource Folder'),
-		'public' 			=> false,
+		'public' 			=> true,
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
