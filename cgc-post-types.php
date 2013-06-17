@@ -238,7 +238,7 @@ function cgc_register_post_types() {
 		'capability_type' 	=> 'post',
 		'has_archive' 		=> true,
 		'hierarchical' 		=> false,
-		'rewrite' 			=> array('slug' => 'cgc-courses'),
+		'rewrite' 			=> array('slug' => 'cgc-courses', 'with_front' => false ),
 		'supports' 			=> array('title','editor','revisions', 'thumbnail', 'author'),
 		'taxonomies'		=> array('category', 'post_tag'),
 		'menu_position' 	=> 5
