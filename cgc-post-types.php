@@ -418,8 +418,8 @@ function cgc_set_default_difficulty( $post_id, $post ) {
         }
     }
 }
-add_action( 'save_post', 'cgc_set_default_difficulty', 100, 2 );
-
+/*add_action( 'save_post', 'cgc_set_default_difficulty', 100, 2 );
+*/
 function cgc_lessons_to_courses() {
 
 	if( ! function_exists( 'p2p_register_connection_type' ) )
