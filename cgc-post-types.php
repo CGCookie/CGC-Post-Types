@@ -239,7 +239,7 @@ function cgc_register_post_types() {
 		'has_archive' 		=> true,
 		'hierarchical' 		=> false,
 		'rewrite' 			=> array('slug' => 'cgc-courses', 'with_front' => false ),
-		'supports' 			=> array('title','editor','revisions', 'thumbnail', 'author'),
+		'supports' 			=> array('title','editor','revisions', 'thumbnail', 'comments', 'author'),
 		'taxonomies'		=> array('category', 'post_tag'),
 		'menu_position' 	=> 5
 	);
