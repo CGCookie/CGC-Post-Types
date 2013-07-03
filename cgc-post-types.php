@@ -231,7 +231,7 @@ function cgc_register_post_types() {
 	$courses_args = array(
 		'labels' 			=> $courses_labels,
 		'singular_label' 	=> __('Course'),
-		'public' 			=> false,
+		'public' 			=> true,
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
@@ -309,7 +309,7 @@ function cgc_register_post_types() {
 	$lessons_args = array(
 		'labels' 			=> $lessons_labels,
 		'singular_label' 	=> __('Lesson'),
-		'public' 			=> false,
+		'public' 			=> true,
 		'show_ui' 			=> true,
 		'publicly_queryable'=> true,
 		'query_var'			=> true,
