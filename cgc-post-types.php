@@ -443,19 +443,6 @@ function cgc_post_type_relations() {
 		'sortable' => 'any'
 	) );
 
-	p2p_register_connection_type( array(
-		'name' => 'downloads_to_forums',
-		'from' => 'download',
-		'to' => 'forum',
-		'sortable' => 'any'
-	) );
-
-	p2p_register_connection_type( array(
-		'name' => 'downloads_to_posts',
-		'from' => 'download',
-		'to' => 'post',
-		'sortable' => 'any'
-	) );
 }
 
 add_action( 'p2p_init', 'cgc_post_type_relations' );
