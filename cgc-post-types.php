@@ -424,7 +424,7 @@ function cgc_set_default_difficulty( $post_id, $post ) {
 }
 /*add_action( 'save_post', 'cgc_set_default_difficulty', 100, 2 );
 */
-function cgc_lessons_to_courses() {
+function cgc_post_type_relations() {
 
 	if( ! function_exists( 'p2p_register_connection_type' ) )
 		return;
@@ -442,6 +442,7 @@ function cgc_lessons_to_courses() {
 		'to' => 'cgc_resource_folder',
 		'sortable' => 'any'
 	) );
+
 }
 
-add_action( 'p2p_init', 'cgc_lessons_to_courses' );
+add_action( 'p2p_init', 'cgc_post_type_relations' );
