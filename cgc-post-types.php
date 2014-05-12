@@ -443,6 +443,13 @@ function cgc_post_type_relations() {
 		'sortable' => 'any'
 	) );
 
+	p2p_register_connection_type( array(
+		'name' => 'quizzes_to_lessons',
+		'from' => 'cgc_quiz',
+		'to' => 'cgc_courses',
+		'sortable' => 'any'
+	) );
+
 }
 
 add_action( 'p2p_init', 'cgc_post_type_relations' );
