@@ -437,9 +437,14 @@ function cgc_post_type_relations() {
 	if( ! function_exists( 'p2p_register_connection_type' ) )
 		return;
 
+	$connect_to_courses = array(
+	    'cgc_lessons',
+	    'cgc_quiz'
+	);
+
 	p2p_register_connection_type( array(
 		'name' => 'lessons_to_courses',
-		'from' => 'cgc_lessons',
+		'from' => $connect_to_courses,
 		'to' => 'cgc_courses',
 		'sortable' => 'any'
 	) );
@@ -448,13 +453,6 @@ function cgc_post_type_relations() {
 		'name' => 'resources_to_folders',
 		'from' => 'cgc_resource',
 		'to' => 'cgc_resource_folder',
-		'sortable' => 'any'
-	) );
-
-	p2p_register_connection_type( array(
-		'name' => 'quizzes_to_lessons',
-		'from' => 'cgc_quiz',
-		'to' => 'cgc_courses',
 		'sortable' => 'any'
 	) );
 
