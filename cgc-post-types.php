@@ -439,18 +439,12 @@ function cgc_post_type_relations() {
 
 	$connect_to_courses = array(
 	    'cgc_lessons',
-	    'cgc_quiz'
+	    'cgc_quiz',
+	    'exercise'
 	);
 
 	p2p_register_connection_type( array(
 		'name' => 'lessons_to_courses',
-		'from' => $connect_to_courses,
-		'to' => 'cgc_courses',
-		'sortable' => 'any'
-	) );
-
-	p2p_register_connection_type( array(
-		'name' => 'exercises_to_courses',
 		'from' => $connect_to_courses,
 		'to' => 'cgc_courses',
 		'sortable' => 'any'
