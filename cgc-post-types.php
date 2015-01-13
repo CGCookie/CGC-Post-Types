@@ -3,7 +3,6 @@
  * Plugin Name: CGC Post Types and Taxonomies
  */
 
-
 function cgc_register_post_types() {
 
 	$announcement_labels = array(
